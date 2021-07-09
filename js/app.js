@@ -23,6 +23,17 @@ function taskCompleted(index){
     $("#" + index).addClass("list-group-item-success");
 }
 
+//* Ajax call try with Async Await (Promise)
+$.ajax({
+    type: "GET",
+    url: "https://jsonplaceholder.typicode.com/todos",
+    async: true,
+    success: function (response) {
+        console.log(response[0].title);
+    }
+});
+
+
 //* Appending to UL through vanilla JS
 let list = document.getElementById("list");
 array.map((todo,index) => {
@@ -124,3 +135,4 @@ array.map((todo,index) => {
 //                 </div>
 //             </li>`)
 //     }});
+
